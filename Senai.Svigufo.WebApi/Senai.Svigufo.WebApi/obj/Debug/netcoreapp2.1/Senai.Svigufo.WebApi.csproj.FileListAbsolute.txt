@@ -1,0 +1,14 @@
+C:\Users\45867182851\source\repos\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\bin\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.deps.json
+C:\Users\45867182851\source\repos\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\bin\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.runtimeconfig.json
+C:\Users\45867182851\source\repos\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\bin\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.runtimeconfig.dev.json
+C:\Users\45867182851\source\repos\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\bin\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.dll
+C:\Users\45867182851\source\repos\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.csprojAssemblyReference.cache
+C:\Users\45867182851\source\repos\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\45867182851\source\repos\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.RazorAssemblyInfo.cache
+C:\Users\45867182851\source\repos\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.RazorAssemblyInfo.cs
+C:\Users\45867182851\source\repos\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.AssemblyInfoInputs.cache
+C:\Users\45867182851\source\repos\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.AssemblyInfo.cs
+C:\Users\45867182851\source\repos\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.RazorTargetAssemblyInfo.cache
+C:\Users\45867182851\source\repos\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\bin\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.pdb
+C:\Users\45867182851\source\repos\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.dll
+C:\Users\45867182851\source\repos\Senai.Svigufo.WebApi\Senai.Svigufo.WebApi\obj\Debug\netcoreapp2.1\Senai.Svigufo.WebApi.pdb
