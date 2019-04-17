@@ -76,6 +76,11 @@ namespace Senai.Svigufo.WebApi.Controllers
             //eventoEncontrado.Nome = tipoEvento.Nome;
 
             //return Ok(eventos);
+            TipoEventoDomain eventoASerAtualizado = TipoEventoRepositorio.BuscarPorId(tipoEvento.Id);
+            if (eventoASerAtualizado == null)
+            {
+                return NotFound();
+            }
 
             try
             {
