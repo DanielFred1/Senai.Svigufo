@@ -94,10 +94,12 @@ namespace Senai.Svigufo.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public void Delete(int id)
         {
-            eventos.Remove(eventos.Find(x => x.Id == id));
-            return Ok(eventos);
+            //eventos.Remove(eventos.Find(x => x.Id == id));
+            //return Ok(eventos);
+
+            TipoEventoRepositorio.Deletar(id);
         }
     }
 }
