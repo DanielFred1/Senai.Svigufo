@@ -48,7 +48,40 @@ namespace Senai.Svigufo.WebApi.Repositories
 
         public void Alterar(TipoEventoDomain tipoEvento);
 
-        public TipoEventoDomain BuscarPorId(int id);
+        public TipoEventoDomain BuscarPorId(int id)
+        {
+            string queryASerExecutada = "SELECT ID, TITULO FROM TIPOS_EVENTOS WHERE ID = @ID";
+
+            //Cria um novo evento
+            TipoEventoDomain tipoEvento = new TipoEventoDomain();
+            //Abre uma nova instancia na conexão
+            using (SqlConnection con = new SqlConnection(stringDeConexao))
+            {
+                //Novo comando que será executado na conexão
+                using (SqlCommand cmd = new SqlCommand(queryASerExecutada, con))
+                {
+                    //Passa o parâmetro recebido para a query a ser executada
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    //Abre a conexão
+                    con.Open();
+                    //Lê os registros
+                    SqlDataReader lerOsRegistros = cmd.ExecuteReader();
+                    //Agora pode verificar se há linhas
+                    if (lerOsRegistros.HasRows)
+                    {
+                        //enquanto tiver registros, no caso, somente um, coloca os dados no objeto criado
+                        while (lerOsRegistros.Read())
+                        {
+                            tipoEvento.Id = Convert.ToInt32(lerOsRegistros["ID"].ToString());
+                            tipoEvento.Nome = lerOsRegistros["TITULO"].ToString();
+                        }
+                        return tipoEvento;
+                    }
+                }
+            }
+            //Caso não tenha registros, retorna nulo
+            return null;
+        }
 
         public void Cadastrar(TipoEventoDomain tipoEvento);
 
