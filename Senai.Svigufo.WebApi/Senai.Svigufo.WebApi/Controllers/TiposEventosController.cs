@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Svigufo.WebApi.Domains;
+using Senai.Svigufo.WebApi.Repositories;
+using Senai.Svigufo.WebApi.Interfaces;
 
 namespace Senai.Svigufo.WebApi.Controllers
 {
@@ -13,19 +15,26 @@ namespace Senai.Svigufo.WebApi.Controllers
     [ApiController]
     public class TiposEventosController : ControllerBase
     {
-        List<TipoEventoDomain> eventos = new List<TipoEventoDomain>()
+        private ITipoEventoRepository TipoEventoRepositorio { get; set; }
+
+        public TiposEventosController()
         {
-            new TipoEventoDomain { Id = 1, Nome = "Tipo Evento A"}
-            ,new TipoEventoDomain { Id = 2, Nome = "Tipo Evento B"}
-            ,new TipoEventoDomain { Id = 3, Nome = "Tipo Evento C"}
-            ,new TipoEventoDomain { Id = 4, Nome = "Tipo Evento D"}
-        };
+            TipoEventoRepositorio = new TipoEventoRepository();
+        }
+
+        //List<TipoEventoDomain> eventos = new List<TipoEventoDomain>()
+        //{
+        //    new TipoEventoDomain { Id = 1, Nome = "Tipo Evento A"}
+        //    ,new TipoEventoDomain { Id = 2, Nome = "Tipo Evento B"}
+        //    ,new TipoEventoDomain { Id = 3, Nome = "Tipo Evento C"}
+        //    ,new TipoEventoDomain { Id = 4, Nome = "Tipo Evento D"}
+        //};
 
         [Produces("application/json")]
         [HttpGet]
         public IEnumerable<TipoEventoDomain> Get()
         {
-            return eventos;
+            return TipoEventoRepositorio.Listar();
         }
 
         [Produces("application/json")]
