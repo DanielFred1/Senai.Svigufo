@@ -46,7 +46,18 @@ namespace Senai.Svigufo.WebApi.Repositories
             return listaTiposEventos;
         }
 
-        public void Alterar(TipoEventoDomain tipoEvento);
+        public void Alterar(TipoEventoDomain tipoEvento)
+        {
+            using (SqlConnection con = new SqlConnection(stringDeConexao))
+            {
+                string queryASerExecutada = "UPDATE TIPOS_EVENTOS SET TITULO = @TITULO WHERE ID = @ID;";
+                SqlCommand cmd = new SqlCommand(queryASerExecutada, con);
+                cmd.Parameters.AddWithValue("@TITULO", tipoEvento.Nome);
+                cmd.Parameters.AddWithValue("@ID", tipoEvento.Id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
 
         public TipoEventoDomain BuscarPorId(int id)
         {
@@ -83,7 +94,18 @@ namespace Senai.Svigufo.WebApi.Repositories
             return null;
         }
 
-        public void Cadastrar(TipoEventoDomain tipoEvento);
+        public void Cadastrar(TipoEventoDomain tipoEvento)
+        {
+            using (SqlConnection con = new SqlConnection(stringDeConexao))
+            {
+                string queryASerExecutada = "INSERT INTO TIPOS_EVENTOS (TITULO) VALUES (@TITULO)";
+
+                SqlCommand cmd = new SqlCommand(queryASerExecutada, con);
+                cmd.Parameters.AddWithValue("@TITULO", tipoEvento.Nome);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
 
         public void Deletar(int id);
     }

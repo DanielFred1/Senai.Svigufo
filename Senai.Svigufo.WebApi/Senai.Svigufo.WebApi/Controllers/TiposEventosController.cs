@@ -41,7 +41,7 @@ namespace Senai.Svigufo.WebApi.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            TipoEventoDomain evento = eventos.Find(x => x.Id == id);
+            TipoEventoDomain evento = TipoEventoRepositorio.BuscarPorId(id);
             if (evento == null)
             {
                 return NotFound();
@@ -54,19 +54,38 @@ namespace Senai.Svigufo.WebApi.Controllers
         [HttpPost]
         public IActionResult Post(TipoEventoDomain tipoEvento)
         {
-            eventos.Add(new TipoEventoDomain() { Id = eventos.Count + 1, Nome = tipoEvento.Nome });
-            return Ok(eventos);
+            //eventos.Add(new TipoEventoDomain() { Id = eventos.Count + 1, Nome = tipoEvento.Nome });
+            //return Ok(eventos);
             //tipoEvento.Id = eventos.Count + 1;
             //return Ok(tipoEvento);
+            try
+            {
+                TipoEventoRepositorio.Cadastrar(tipoEvento);
+                return Ok();
+            }
+            catch 
+            {
+                return BadRequest();
+            }
         }
 
         [HttpPut]
         public IActionResult Put(TipoEventoDomain tipoEvento)
         {
-            var eventoEncontrado = eventos.Find(x => x.Id == tipoEvento.Id);
-            eventoEncontrado.Nome = tipoEvento.Nome;
+            //var eventoEncontrado = eventos.Find(x => x.Id == tipoEvento.Id);
+            //eventoEncontrado.Nome = tipoEvento.Nome;
 
-            return Ok(eventos);
+            //return Ok(eventos);
+
+            try
+            {
+                TipoEventoRepositorio.Alterar(tipoEvento);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
 
         [HttpDelete("{id}")]
