@@ -12538,11 +12538,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\45867182851\\source\\repos\\Senai.Svigufo.WebApi\\Senai.Svigufo.WebApi\\Senai.Svigufo.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\45867182851\\Desktop\\Senai.Svigufo\\Senai.Svigufo.WebApi\\Senai.Svigufo.WebApi\\Senai.Svigufo.WebApi.csproj",
       "projectName": "Senai.Svigufo.WebApi",
-      "projectPath": "C:\\Users\\45867182851\\source\\repos\\Senai.Svigufo.WebApi\\Senai.Svigufo.WebApi\\Senai.Svigufo.WebApi.csproj",
+      "projectPath": "C:\\Users\\45867182851\\Desktop\\Senai.Svigufo\\Senai.Svigufo.WebApi\\Senai.Svigufo.WebApi\\Senai.Svigufo.WebApi.csproj",
       "packagesPath": "C:\\Users\\45867182851\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\45867182851\\source\\repos\\Senai.Svigufo.WebApi\\Senai.Svigufo.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\45867182851\\Desktop\\Senai.Svigufo\\Senai.Svigufo.WebApi\\Senai.Svigufo.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
