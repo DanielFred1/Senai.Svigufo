@@ -10,7 +10,7 @@ namespace Senai.Svigufo.WebApi.Repositories
 {
     public class InstituicaoRepository : IInstituicaoRepository
     {
-        string stringDeConexao = "Data Source=.\\SqlExpress; initial catalog=SENAI_SVIGUFO_MANHA; User Id=sa; Pwd=132";
+        string stringDeConexao = "Data Source=.\\SqlExpress01; initial catalog=SENAI_SVIGUFO_MANHA; Integrated Security=True";
 
         public void Cadastrar(InstituicaoDomain instituicao)
         {

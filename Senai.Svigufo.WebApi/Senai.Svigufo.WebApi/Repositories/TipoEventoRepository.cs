@@ -10,7 +10,7 @@ namespace Senai.Svigufo.WebApi.Repositories
 {
     public class TipoEventoRepository : ITipoEventoRepository
     {
-        string stringDeConexao = "Data Source=.\\SqlExpress; initial catalog=SENAI_SVIGUFO_MANHA; User Id=sa; Pwd=132";
+        string stringDeConexao = "Data Source=.\\SqlExpress01; initial catalog=SENAI_SVIGUFO_MANHA; Integrated Security=True";
         private string queryASerExecutada = "SELECT ID, TITULO FROM TIPOS_EVENTOS";
 
         public List<TipoEventoDomain> Listar()
