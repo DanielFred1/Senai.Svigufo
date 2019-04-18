@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -46,6 +47,34 @@ namespace Senai.Svigufo.WebApi
                     Contact = new Contact { Name = "Daniel Frederic",
                         Email = "dsena.frederic@gmail.com", Url = "https://github.com/DanielFred1" }
                 });
+            });
+
+            //Implementa autenticação
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = "JwtBearer";
+                options.DefaultChallengeScheme = "JwtBearer";
+            }
+            ).AddJwtBearer("JwtBearer", options =>
+            {
+                //Define as opções 
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    //Quem esta solicitando
+                    ValidateIssuer = true,
+                    //Quem esta validadando
+                    ValidateAudience = true,
+                    //Definindo o tempo de expiração
+                    ValidateLifetime = true,
+                    //Forma de criptografia
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("svigufo-chave-autenticacao")),
+                    //Tempo de expiração do Token
+                    ClockSkew = TimeSpan.FromMinutes(30),
+                    //Nome da Issuer, de onde esta vindo
+                    ValidIssuer = "SviGufo.WebApi",
+                    //Nome da Audience, de onde esta vindo
+                    ValidAudience = "SviGufo.WebApi"
+                };
             });
         }
 

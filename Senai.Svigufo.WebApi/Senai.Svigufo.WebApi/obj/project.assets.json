@@ -12702,6 +12702,7 @@
       "Microsoft.AspNetCore >= 2.1.1",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Authentication >= 2.1.1",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 2.1.1",
       "Microsoft.AspNetCore.Authorization >= 2.1.1",
       "Microsoft.AspNetCore.Cors >= 2.1.1",
       "Microsoft.AspNetCore.Razor >= 2.1.1",
@@ -12767,6 +12768,10 @@
             "autoReferenced": true
           },
           "Microsoft.AspNetCore.Authentication": {
+            "target": "Package",
+            "version": "[2.1.1, )"
+          },
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[2.1.1, )"
           },
