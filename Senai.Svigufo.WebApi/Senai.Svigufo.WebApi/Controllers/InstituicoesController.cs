@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 using Senai.Svigufo.WebApi.Domains;
 using Senai.Svigufo.WebApi.Interfaces;
 using Senai.Svigufo.WebApi.Repositories;
+using System.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Authentication;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Senai.Svigufo.WebApi.Controllers
 {
@@ -21,6 +25,7 @@ namespace Senai.Svigufo.WebApi.Controllers
             InstituicaoRepository = new InstituicaoRepository();
         }
 
+        [Authorize(Roles = "ADMINISTRADOR")]
         [HttpGet]
         public IActionResult Get()
         {

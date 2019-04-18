@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Senai.Svigufo.WebApi.Domains;
 using Senai.Svigufo.WebApi.Interfaces;
 using System.Data.SqlClient;
 using Senai.Svigufo.WebApi.ViewModels;
-using System.Data.SqlClient;
 
 namespace Senai.Svigufo.WebApi.Repositories
 {
