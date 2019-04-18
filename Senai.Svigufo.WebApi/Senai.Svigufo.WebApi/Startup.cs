@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Senai.Svigufo.WebApi
 {
@@ -15,8 +17,16 @@ namespace Senai.Svigufo.WebApi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+            //Adiciona o Mvc ao projeto
+            services.AddMvc()
+            //Adiciona as opções do json 
+            .AddJsonOptions(options => {
+                options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+            })
+            .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 
+            //Adiciona o Cors ao projeto
+            //Veremos em breve
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -24,6 +34,18 @@ namespace Senai.Svigufo.WebApi
                         .AllowAnyMethod()
                         .AllowAnyHeader()
                         .AllowCredentials());
+            });
+
+            //Adiciona o Swagger ao projeto
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Version = "v1",
+                    Title = "Minha primeira API",
+                    TermsOfService = "Apenas para uso acadêmico",
+                    Description = "Projeto de Web API para fins acadêmicos, utilizando DataBase SQL Server",
+                    Contact = new Contact { Name = "Daniel Frederic",
+                        Email = "dsena.frederic@gmail.com", Url = "https://github.com/DanielFred1" }
+                });
             });
         }
 
@@ -34,6 +56,16 @@ namespace Senai.Svigufo.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseMvc();
             //app.Run(async (context) =>
