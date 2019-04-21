@@ -6,7 +6,7 @@ using Senai.Svigufo.WebApi.Domains;
 
 namespace Senai.Svigufo.WebApi.Interfaces
 {
-    interface IConviteRepository
+    public interface IConviteRepository
     {
         List<ConviteDomain> ListarMeusConvites(int id);
 

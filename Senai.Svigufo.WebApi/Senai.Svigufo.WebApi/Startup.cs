@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
+using Senai.Svigufo.WebApi.Interfaces;
+using Senai.Svigufo.WebApi.Repositories;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Senai.Svigufo.WebApi
@@ -25,6 +27,8 @@ namespace Senai.Svigufo.WebApi
                 options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
             })
             .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+
+            services.AddTransient<ITipoEventoRepository, TipoEventoRepository>();
 
             //Adiciona o Cors ao projeto
             //Veremos em breve

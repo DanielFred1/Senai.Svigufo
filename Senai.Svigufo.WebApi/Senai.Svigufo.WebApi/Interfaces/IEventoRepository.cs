@@ -27,5 +27,7 @@ namespace Senai.Svigufo.WebApi.Interfaces
         /// <param name="id">Id</param>
         /// <param name="evento">EventoDomain</param>
         void Atualizar(int id, EventoDomain evento);
+
+        EventoDomain BuscarPorId(int id);
     }
 }
